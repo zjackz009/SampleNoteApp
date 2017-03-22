@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SampleNoteApp</string>
+
+    <string name="text_manual">Manual</string>
+    <string name="text_auto">Auto</string>
+    <string name="title_activity_note_write">NoteWriteActivity</string>
 </resources>
