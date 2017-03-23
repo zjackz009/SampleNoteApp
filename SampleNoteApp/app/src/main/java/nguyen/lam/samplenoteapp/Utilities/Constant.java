@@ -5,6 +5,7 @@ public class Constant {
 
     public static final String SYMBOL_ = "_";
     public static final String SYMBOL_BREAK = "\n";
+    public static final String ROOT_PATH = "/data/";
 
     public static class PREFERENCE_KEY{
         public static String PREFERENCE_KEY_AUTO_SYNC = "lam.nguyen.sync.auto";

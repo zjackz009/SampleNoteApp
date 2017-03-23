@@ -51,6 +51,11 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemViewHolder> {
 
     }
 
+    public void update(ArrayList<String> list){
+        listNotes = list;
+        notifyDataSetChanged();
+    }
+
     public void remove(int position) {
         if(null != noteItemListener){
             noteItemListener.onItemRemove(listNotes.get(position));

@@ -1,6 +1,7 @@
 package nguyen.lam.samplenoteapp.Utilities;
 
 import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -9,14 +10,18 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import nguyen.lam.samplenoteapp.R;
 
 public class FileUtil {
 
     private static final String TAG = FileUtil.class.getSimpleName();
 
     public synchronized static void writeFile(Context context, String parentPath, String fileName, String data) {
-        File parentFolder = context.getDir(parentPath, Context.MODE_PRIVATE);
+        File parentFolder = new File(Environment.getExternalStorageDirectory().getPath()+Constant.ROOT_PATH+context.getString(R.string.app_name)+"/"+parentPath);
         if (!parentFolder.exists()) {
             parentFolder.mkdirs();
         }
@@ -40,7 +45,7 @@ public class FileUtil {
     }
 
     public static String readFile(Context context, String parentPath, String fileName) {
-        File parentFolder = context.getDir(parentPath, Context.MODE_PRIVATE);
+        File parentFolder = new File(Environment.getExternalStorageDirectory().getPath()+Constant.ROOT_PATH+context.getString(R.string.app_name)+"/"+parentPath);
         if (!parentFolder.exists()) {
             return "";
         }
@@ -87,7 +92,7 @@ public class FileUtil {
     public static ArrayList<String> getAllFileName(Context context,String parentPath){
         ArrayList<String> listFile = new ArrayList<>();
 
-        File userFolder = context.getDir(parentPath, Context.MODE_PRIVATE);
+        File userFolder = new File(Environment.getExternalStorageDirectory().getPath()+Constant.ROOT_PATH+context.getString(R.string.app_name)+"/"+parentPath);
         if (!userFolder.exists()) {
             return null;
         }
@@ -101,5 +106,17 @@ public class FileUtil {
         }
 
         return listFile;
+    }
+
+    public static ArrayList<File> getAllFile(Context context,String parentPath){
+
+        File userFolder =  new File(Environment.getExternalStorageDirectory().getPath()+Constant.ROOT_PATH+context.getString(R.string.app_name)+"/"+parentPath);
+        if (!userFolder.exists()) {
+            return null;
+        }
+
+        File[] listOfFiles = userFolder.listFiles();
+
+        return new ArrayList<File>(Arrays.asList(listOfFiles));
     }
 }
