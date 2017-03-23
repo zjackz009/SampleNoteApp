@@ -49,18 +49,13 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/main_margin_10"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <nguyen.lam.samplenoteapp.Layouts.LinedEditText
-            android:id="@+id/note_text"
-            android:inputType="textImeMultiLine"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/yellow_green" />
-    </android.support.v4.widget.NestedScrollView>
+    <nguyen.lam.samplenoteapp.Layouts.LinedEditText
+        android:id="@+id/txt_note_text"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/yellow_green"
+        android:gravity="top|left"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>

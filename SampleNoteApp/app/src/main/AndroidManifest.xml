@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nguyen.lam.samplenoteapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".SampleNoteApplication"
         android:allowBackup="true"

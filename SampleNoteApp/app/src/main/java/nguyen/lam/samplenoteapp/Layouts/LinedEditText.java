@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.widget.EditText;
 
+
 public class LinedEditText extends EditText {
 
     private Rect mRect;
@@ -24,7 +25,6 @@ public class LinedEditText extends EditText {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        //int count = getLineCount();
 
         int height = getHeight();
         int line_height = getLineHeight();
@@ -36,7 +36,7 @@ public class LinedEditText extends EditText {
 
         Rect r = mRect;
         Paint paint = mPaint;
-        int baseline = getLineBounds(0, r);//first line
+        int baseline = getLineBounds(0, r);
 
         for (int i = 0; i < count; i++) {
 
