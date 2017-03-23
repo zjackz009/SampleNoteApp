@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/main_padding_2">
+
+    <TextView
+        android:id="@+id/tv_note_item_name"
+        android:layout_width="match_parent"
+        android:paddingStart="@dimen/main_margin_10"
+        android:layout_height="@dimen/main_bar_height"
+        android:background="@drawable/note_item_background"
+        android:gravity="start|center_vertical" />
+
+</LinearLayout>
